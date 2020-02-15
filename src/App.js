@@ -1,18 +1,18 @@
-import React from 'react';
+import React, {Fragment} from 'react';
 import './App.css';
 
 import { Container } from "semantic-ui-react";
 
 import LandingPage from './LandingPage';
+import Menu from './Menu';
 
-function App() {
-  return (
-    <div>
-      <Container>
-        <LandingPage />
-      </Container>
-    </div>
-  );
-}
+const App = () => (
+  <Fragment>
+    <Menu />
+    <Container>
+      <LandingPage />
+    </Container>
+  </Fragment>
+);
 
 export default App;
