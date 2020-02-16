@@ -2,7 +2,7 @@ import React from "react";
 import axios from "axios";
 import "./LandingPage.css"
 
-let endpoint = "http://localhost:8080/";
+let endpoint = "http://localhost:8080/gallery";
 
 class LandingPage extends React.Component {
   constructor(props) {
@@ -38,20 +38,20 @@ class LandingPage extends React.Component {
       }
 
       return (
-        <div class="ui fluid card">
-          <div class="image">
-            <img src={`data:image/jpg;base64,${item.Binary}`} width="250" height="250"/>
+        <div className="ui fluid card" key={item.Id}>
+          <div className="image">
+            <img src={`data:image/jpg;base64,${item.Binary}`} alt={item.Title}/>
           </div>
-          <div class="content">
-            <a class="header">{item.Title}</a>
-            <div class="meta">
-              <span class="date">{item.Artist} {item.Year}</span>
+          <div className="content">
+            <div className="header">{item.Title}</div>
+            <div className="meta">
+              <span className="date">{item.Artist} {item.Year}</span>
             </div>
-            <div class="description">
+            <div className="description">
               Measurements: {item.Size}
             </div>
           </div>
-          <div class="extra content">
+          <div className="extra content">
              <font color={colore}>{txt}</font>
           </div>
         </div>
@@ -61,7 +61,7 @@ class LandingPage extends React.Component {
 
   render() {
     return (
-      <div class="ui four doubling stackable cards">{this.renderItems()}</div>
+      <div className="ui four doubling stackable cards">{this.renderItems()}</div>
     );
   }
 
