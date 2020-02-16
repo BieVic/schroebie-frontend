@@ -48,11 +48,11 @@ class LandingPage extends React.Component {
               <span class="date">{item.Artist} {item.Year}</span>
             </div>
             <div class="description">
-              Measurements: {item.Size}{colore}
+              Measurements: {item.Size}
             </div>
           </div>
           <div class="extra content">
-             <font color={colore}>{txt}</font> 
+             <font color={colore}>{txt}</font>
           </div>
         </div>
       );
