@@ -28,29 +28,35 @@ class LandingPage extends React.Component {
   };
 
   renderItems() {
-    return this.state.items.map((item) => (
+    return this.state.items.map((item) => {
 
-      <div class="ui fluid card">
-        <div class="image">
-          <img src={`data:image/jpg;base64,${item.Binary}`} width="250" height="250"/>
-        </div>
-        <div class="content">
-          <a class="header">{item.Title}</a>
-          <div class="meta">
-            <span class="date">{item.Artist}</span>
-          </div>
-          <div class="description">
-            Measurements: {item.Size}
-          </div>
-        </div>
-        <div class="extra content">
-          <a>
-            {item.Year}
-          </a>
-        </div>
-      </div>
+      let colore = 'green';
+      let txt = 'Available';
+      if (item.Sold) {
+        colore = 'red';
+        txt = 'Sold';
+      }
 
-    ));
+      return (
+        <div class="ui fluid card">
+          <div class="image">
+            <img src={`data:image/jpg;base64,${item.Binary}`} width="250" height="250"/>
+          </div>
+          <div class="content">
+            <a class="header">{item.Title}</a>
+            <div class="meta">
+              <span class="date">{item.Artist} {item.Year}</span>
+            </div>
+            <div class="description">
+              Measurements: {item.Size}{colore}
+            </div>
+          </div>
+          <div class="extra content">
+             <font color={colore}>{txt}</font> 
+          </div>
+        </div>
+      );
+    });
   }
 
   render() {
