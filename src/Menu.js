@@ -12,6 +12,7 @@ export default () => (
           onClick={() => window.location.reload()}
         />
       </Menu.Item>
+      Contact: schroebie.gallery@gmail.com
     </Container>
   </Menu>
 );

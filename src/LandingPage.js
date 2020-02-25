@@ -1,5 +1,6 @@
 import React from "react";
 import axios from "axios";
+import { LazyLoadImage } from 'react-lazy-load-image-component';
 import "./LandingPage.css"
 
 let endpoint = "http://localhost:8080/gallery";
@@ -40,7 +41,7 @@ class LandingPage extends React.Component {
       return (
         <div className="ui fluid card" key={item.Id}>
           <div className="image">
-            <img src={`data:image/jpg;base64,${item.Binary}`} alt={item.Title}/>
+            <LazyLoadImage src={`data:image/jpg;base64,${item.Binary}`} alt={item.Title}/>
           </div>
           <div className="content">
             <div className="header">{item.Title}</div>
